@@ -1,0 +1,198 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+	font-family: Arial;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+body::before, body::after { 
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body::after {
+	background: linear-gradient(160deg, #00ACC1,  #00ACC1 15%, transparent 80%, transparent);
+}
+
+body::before {
+	background: linear-gradient(45deg, #000000, #000000 20%, #757575 40%, #757575);
+}
+
+.contenedor-principal {
+	position: relative;
+	margin-top: 2em;
+	z-index:9;
+	width: 500px;
+	height: 500px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	backdrop-filter: blur(5px);
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-right: 2px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.caja-contenedora {
+	position: relative;
+	text-align: center;
+	margin-top: 2em;
+	width: 100%;
+	height: 100%;
+	padding: 40px;
+}
+
+.caja-contenedora h2 {
+	position: relative;
+	text-align: left;
+	color: #FFFFFF;
+	font-size: 2em;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 40px;
+}
+
+.caja-contenedora h2::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 80px;
+	height: 2px;
+	background: white;
+}
+
+.caja-contenedora #btn-agregar, #btn-confirmar-edicion {
+	border-radius: 50%;
+	font-weight: bold;
+	width: 55px;
+	height: 55px;
+	background: rgba(102, 213, 145, 0.8);
+	outline: none;
+	padding: 10px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 1.5em;
+	cursor: pointer;
+	letter-spacing: 1px;
+	color: #FFFFFF;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.caja-contenedora #input-tarea {
+	display: none;
+	position: relative;
+	margin-top: 1em;
+	width: 100%;
+	height: 2em;
+	border: none;
+	outline: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.1);
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+#input-tarea::placeholder {
+	color: #FFFFFF;
+}
+
+.contenedor-lista {
+	overflow: auto;
+	margin-top: 1.5em;
+	width: 100%;
+	height: 200px;
+	background: none;
+  	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.contenedor-lista::-webkit-scrollbar {
+	display: none;
+}
+
+#btn-confirmar-edicion {
+	display: none;
+}
+
+li {
+	list-style: none;
+	padding: 6px;
+	color: #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	background: none;
+	cursor: pointer;
+	display: flex;
+	align-items: start;
+	justify-content: flex-start;
+}
+
+.texto-tachado {
+	text-decoration: line-through;
+}
+
+.editor-texto {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	background: rgba(255, 255, 255, 0.1);
+	letter-spacing: 2px;
+}
+
+.contenedor-confirmar-edicion {
+	margin-top: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-editar {
+	margin-right: 5px;
+	color: #FF9800;
+	background: none;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+#barra-progreso {
+	top: 0;
+	margin-bottom: 5px;
+	height: 1px;
+	width: 0%;
+	border-radius: 20%;
+}
+
+.progreso-ok {
+	background: linear-gradient(to left, #008AFF, #00E5FF);
+	animation: efecto 5s linear infinite;
+}
+
+.progreso-error {
+	background: #FF4436;
+}
+
+@keyframes efecto {
+	0%, 100% {
+		filter: hue-rotate(0deg);
+	}
+
+	50% {
+		filter: hue-rotate(360deg);
+	}
+}
